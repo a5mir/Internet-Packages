@@ -1,0 +1,172 @@
+.root {
+    -fx-background-color: #424141;
+
+}
+
+* {
+    -fx-font-family: "arial";
+    -fx-text-fill: white;
+}
+
+/*button*/
+
+.button {
+    -fx-background-color: black, black, linear-gradient(#505050 0%, #000000 100%);
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+
+.saveBtn:hover {
+    -fx-text-fill: #69ff4b;
+    -fx-font-weight: bold;
+}
+
+.clearBtn:hover {
+    -fx-text-fill: #fff44b;
+    -fx-font-weight: bold;
+}
+
+.deleteBtn:hover{
+    -fx-text-fill: #ff4b4b;
+    -fx-font-weight: bold;
+}
+
+/*radiobutton*/
+
+.radio-button .radio{
+    -fx-border-width: 1px   ;
+    -fx-border-color: #000  ;
+    -fx-background-color: linear-gradient(#373737 0%, #585857 100%);
+    -fx-border-radius: 15px  ;
+}
+
+.radio-button:hover .radio{
+    -fx-border-color: grey;
+    -fx-border-width: 1px;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #69ff4b;
+}
+
+.radio-button:selected {
+    -fx-font-weight: bold;
+    -fx-text-fill: #69ff4b;
+}
+
+/*togglebutton*/
+
+.toggle-button{
+    -fx-background-color: linear-gradient(#373737 0%, #585857 100%);
+    -fx-text-fill: white;
+    -fx-border-width: 1px   ;
+    -fx-border-color: #000  ;
+    -fx-border-radius: 5px;
+}
+
+.toggle-button:hover {
+    -fx-border-color: grey;
+    -fx-border-width: 1px   ;
+    -fx-border-radius: 5px;
+}
+
+.toggle-button:selected {
+    -fx-border-color: #69ff4b;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #69ff4b;
+    -fx-font-weight: bold;
+}
+
+/*textfield*/
+
+.text-field {
+    -fx-text-fill: #69ff4b;
+    -fx-font-weight: bold;
+    -fx-border-color: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-radius: 5px;
+    -fx-background-color: linear-gradient(#373737 0%, #585857 100%);
+}
+
+.text-field:focused {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: grey;
+    -fx-border-width: 1 1 1 1;
+    -fx-background-color: linear-gradient(#373737 0%, #585857 100%);
+}
+
+/*label*/
+
+.selectLbl {
+    -fx-font-weight: bold;
+}
+
+.listLbl{
+    -fx-font-weight: bold;
+}
+
+.error {
+    -fx-font-weight: bold;
+    -fx-text-fill: #81fff5;
+}
+
+/*table*/
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#505050 0%, #000000 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-view .filler{
+    -fx-background-color: #424141;
+}
+
+.table-row-cell{
+    
+    -fx-font-weight: bold;
+    -fx-background-color: -fx-table-cell-border-color, #424141;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #333333;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0;  
+}
+
+.table-row-cell:selected {
+    -fx-background-color: gray;
+    -fx-text-fill: black;
+}
+
+
+
+
+
+
+

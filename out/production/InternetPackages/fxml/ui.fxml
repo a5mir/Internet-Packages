@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import main.*?> 
+
+<VBox  xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.PersonController" spacing="20" alignment="center">
+ 
+    <!--Header-->
+    
+    <Label styleClass="selectLbl" text="- Select your package -">
+        <VBox.margin>
+            <Insets>
+                <top>20</top>
+            </Insets>
+        </VBox.margin>           
+    </Label>
+    
+    <!--Select-->
+    
+    <!--TextFields-->
+    
+    <HBox spacing="10" alignment="CENTER">
+        <!--First name-->
+        <!--            <Label  text="First name: " />-->
+        <TextField  fx:id="fName" promptText="First name" />
+        <!--Last name-->
+        <!--            <Label text="Last name: " />-->
+        <TextField  fx:id="lName" promptText="Last name" />
+    
+        <!--Adress-->
+        <!--            <Label  text="Adress: " />-->
+        <TextField fx:id="adress" promptText="Adress" />
+    </HBox>
+        
+    <GridPane  
+        alignment="center" hgap="20" vgap="20">
+            
+        <!--Speed-->
+        
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="Speed: " />
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="stwo" mnemonicParsing="false" text="2 Mbit">
+            <toggleGroup>
+                <ToggleGroup fx:id="speed" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" fx:id="sfive" mnemonicParsing="false" text="5 Mbit" toggleGroup="$speed" />
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" fx:id="sten" mnemonicParsing="false" text="10 Mbit" toggleGroup="$speed" />
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="4" fx:id="stwenty" mnemonicParsing="false" text="20 Mbit" toggleGroup="$speed" />
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="5" fx:id="sfifty" mnemonicParsing="false" text="50 Mbit" toggleGroup="$speed" />
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="6" fx:id="shundred" mnemonicParsing="false" text="100 Mbit" toggleGroup="$speed" />
+            
+        <!--Data-->
+       
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Data: " />
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="done" mnemonicParsing="false" text="1 GB">
+            <toggleGroup>
+                <ToggleGroup fx:id="data" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="dfive" mnemonicParsing="false" text="5 GB" toggleGroup="$data" />
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="3" fx:id="dten" mnemonicParsing="false" text="10 GB" toggleGroup="$data" />
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="4" fx:id="dhundred" mnemonicParsing="false" text="100 GB" toggleGroup="$data" />
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="5" fx:id="dflat" mnemonicParsing="false" text="Flat" toggleGroup="$data" />
+    
+        <!--Duration-->
+   
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Duration: " />
+        <ToggleButton GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="oney" mnemonicParsing="false" text="One year">
+            <toggleGroup>
+                <ToggleGroup fx:id="duration" />
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton GridPane.rowIndex="2" GridPane.columnIndex="2" fx:id="twoy" mnemonicParsing="false" text="Two years" toggleGroup="$duration" />      
+    </GridPane>
+    
+    
+    
+    <!--Buttons-->
+        
+    <HBox spacing="20" alignment="CENTER">
+        <!-- Save button-->
+        <Button fx:id="saveBtn" styleClass="saveBtn" mnemonicParsing="false" onAction="#savePerson" text="Save" />
+
+        <!--Clear button-->
+        <Button fx:id="clearBtn" styleClass="clearBtn" mnemonicParsing="false" onAction="#clearPerson" text="Clear" />
+        <!--List All-->
+
+        <!--Delete button-->
+        <Button fx:id="deleteBtn" styleClass="deleteBtn" mnemonicParsing="false" onAction="#deletePerson" text="Delete" />
+            
+    </HBox>
+        
+        <!--List-->
+        
+    <Label styleClass="listLbl" text="- List -" />
+        
+    <TableView fx:id="tabela" prefWidth="790" prefHeight="485">
+        <columns>
+            <TableColumn prefWidth="80.0" text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="id"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="200.0" text="First Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="firstName"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="200.0" text="Last Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lastName"/>
+                </cellValueFactory>                        
+            </TableColumn>
+            <TableColumn prefWidth="85.0" text="Speed">
+                <cellValueFactory>
+                    <PropertyValueFactory property="speed"/>
+                </cellValueFactory>                        
+            </TableColumn>
+            <TableColumn prefWidth="85.0" text="Data">
+                <cellValueFactory>
+                    <PropertyValueFactory property="data"/>
+                </cellValueFactory>                        
+            </TableColumn>
+            <TableColumn prefWidth="150.0" text="Duration">
+                <cellValueFactory>
+                    <PropertyValueFactory property="duration"/>
+                </cellValueFactory>                        
+            </TableColumn>
+        </columns>
+               
+    </TableView>    
+    
+      <Label styleClass="error" fx:id="error"  layoutX="126.0" layoutY="92.0" minHeight="16" minWidth="69" />  
+        
+</VBox>
